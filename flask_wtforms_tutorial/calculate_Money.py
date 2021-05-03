@@ -1,10 +1,9 @@
 def get_cost_matrix():
     cost_matrix = [ [100, 75, 50, 100] ]
     return cost_matrix
-    
-# credits to Livy and Li for creaitng the seatChart() I add the money handling
 
-def seatChart():
+# credits to Livy and Li for creaitng the seatChart() I add the money handling
+def cost():
     chart = [['O','O','O','O'],
              ['O','O','O','O'],
              ['O','O','O','O'],
@@ -32,8 +31,4 @@ def seatChart():
             for money in cost_matrix:
                 if chart[row][seat] == 'X':
                     total_cost = total_cost + money[seat]
-    print(total_cost)
-
-    return chart
-
-seatChart()
+    return total_cost

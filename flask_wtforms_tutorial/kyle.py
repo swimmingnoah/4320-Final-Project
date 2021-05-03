@@ -1,3 +1,22 @@
+import csv
+
+PASSCODES = 'passcodes.txt'
+RESERVATIONS = 'reservations.txt'
+
+#CSVCHECK TAKES TWO PARAMETERS (USERNAME AND PASSWORD)
+#ITS PURPOSE IS TO CHECK IF THOSE PARAMETERS MATCH A ROW IN THE CSV FILE
+#IF A MATCH EXISTS; IT WILL RETURN TRUE
+def csvCheck(user,userPass):
+    with open(PASSCODES) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for row in csv_reader:
+            username = row[0].lstrip()
+            password = row[1].lstrip()
+            if username == user and password == userPass:
+                return True
+    return False
+
+
 #WRITERESERVATION TAKES FOUR PARAMETERS(NAME, ROW, COLUMN, RESERVATION NUMBER)
 #ITS PURPOSE IS TO APPEND A NEW RESERVATION TO THE TEXT FILE
 #IT OPENS THE GLOBAL RESERVATIONS FILE AND APPENDS A ROW WITH THE INPUTS.

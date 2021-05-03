@@ -16,8 +16,33 @@
   {% endif %}
   <br>
 </div>
-  <h2 class="title">Administrator Login</h2>
 
+      <div class="title__container">
+    <h2 class="title">Administrator Login</h2>
+    <div>
+      <a href="/" class="go__home">Go Home</a>
+      <a href="/admin" class="go__other">Admin</a>
+      <a href="/reservations" class="go__other">Reservations</a>
+    </div>
+
+  </div>
+  <hr>
+  {% if error %}
+       <p style='color:red;text-align:center;'>{{ error }}</p>
+ {% endif %}
+
+ {% if seatingChart %}
+   <p><b>Printing Seating Chart...</b></p>
+   <div style='background-color:grey; border-radius:10px; padding:5px; width:30%; text-align:center;'>
+    {% for row in seatingChart %}
+      <p>{{ row }}</p>
+    {% endfor %}
+   </div>
+ {% endif %}
+
+ {% if sales %}
+       <p><b>Total Sales: {{ sales }}</b></p>
+ {% endif %}
   <form method="POST" action="/admin">
       {{ form.csrf_token }}
       <div class="form-field">{{ form.username.label }} {{ form.username }}
