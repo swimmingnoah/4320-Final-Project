@@ -8,4 +8,5 @@ string_col = "1"
 res = "".join([string_name[i] + string_code[i] for i in range(len(string_name))]) + string_code[len(string_name):]
 
 # print result
+print("Congratulations " + str(string_name))
 print("The reservation code : " + str(res))
