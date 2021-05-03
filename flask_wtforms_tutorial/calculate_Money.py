@@ -2,7 +2,7 @@ def get_cost_matrix():
     cost_matrix = [ [100, 75, 50, 100] ]
     return cost_matrix
 
-# credits to Livy and Li for creaitng the seatChart() I add the money handling
+# credits to Livvy and Li for creating the seatChart() I add the money handling
 def cost():
     chart = [['O','O','O','O'],
              ['O','O','O','O'],
