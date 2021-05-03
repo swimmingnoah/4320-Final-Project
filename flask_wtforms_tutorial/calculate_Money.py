@@ -25,8 +25,8 @@ def cost():
     else:
          reservations = file.readlines()
     for  reservation in reservations:
-            row = int(reservation.split(', ')[1])
-            seat = int(reservation.split(', ')[2])
+            row = int(reservation.split(',')[1])
+            seat = int(reservation.split(',')[2])
             chart[row][seat] = 'X'
             for money in cost_matrix:
                 if chart[row][seat] == 'X':

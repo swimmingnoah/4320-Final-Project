@@ -8,6 +8,14 @@
 
 <div class="formwrapper">
   <div class="seatchart">
+  {% if chart %}
+  <br>
+     {% for seat in chart %}
+     <p>{{ seat }}</p>
+     {% endfor %}
+  {% endif %}
+</div>
+  <hr>
       <div class="title__container">
     <h2 class="title">Administrator Login</h2>
     <div>

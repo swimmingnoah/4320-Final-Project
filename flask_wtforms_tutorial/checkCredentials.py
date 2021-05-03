@@ -4,7 +4,7 @@ def checkCredentials(uname, pword):
 
     k = 0
     check = 0
-    
+
     try:
         file = open('passcodes.txt','r')
     except FileNotFoundError:
@@ -19,15 +19,12 @@ def checkCredentials(uname, pword):
             if uname == name:          #check for matching username and password
                if pword == code:
                   return 1             #return 1 if username and password are correct
-                  break      
+                  break
             k += 1
     return 0
 
 def formatMoney(money):
-    
+
    cash = "${:,.2f}".format(money)
-   
+
    return cash
-
-
-
